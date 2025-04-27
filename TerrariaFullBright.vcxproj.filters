@@ -31,6 +31,12 @@
     <Image Include="resources\icon\icon.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="resources\images\after.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resources\images\before.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="resources\manifest\Terraria Fullbright.exe.manifest" />

@@ -135,6 +135,8 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\icon\icon.ico" />
+    <Image Include="resources\images\after.png" />
+    <Image Include="resources\images\before.png" />
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="resources\manifest\Terraria Fullbright.exe.manifest" />
