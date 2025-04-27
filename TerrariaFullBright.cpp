@@ -142,13 +142,13 @@ void changeFont(const HWND& hwnd) {
 //The next functions are basically the same where it creates objects like buttons and labels (text)
 void createFoundObjects(const HWND& hwnd) {
     HWND foundLabel = CreateWindowW(L"static", L"Enjoy Fullbright!", WS_VISIBLE | WS_CHILD, 100, 10, 100, 50, hwnd, nullptr, nullptr, nullptr);
-    HWND closeWindowLabel = CreateWindowW(L"static", L"Toggle Using Shift+F6", WS_VISIBLE | WS_CHILD, 45, 35, 200, 20, hwnd, nullptr, nullptr, nullptr);
+    HWND closeWindowLabel = CreateWindowW(L"static", L"Toggle Using Shift+F6", WS_VISIBLE | WS_CHILD, 90, 35, 150, 20, hwnd, nullptr, nullptr, nullptr);
 
     changeFont(foundLabel);
     changeFont(closeWindowLabel);
 }
 void createCantFindObjects(const HWND& hwnd) {
-    HWND cantFindLabel = CreateWindowW(L"static", L"Can't find Terraria or Function Memory", WS_VISIBLE | WS_CHILD, 80, 10, 140, 20, hwnd, nullptr, nullptr, nullptr);
+    HWND cantFindLabel = CreateWindowW(L"static", L"Can't find Terraria or Function Memory", WS_VISIBLE | WS_CHILD, 35, 10, 250, 20, hwnd, nullptr, nullptr, nullptr);
     HWND restartLabel = CreateWindowW(L"static", L"Restart both programs and try again", WS_VISIBLE | WS_CHILD, 45, 35, 190, 20, hwnd, nullptr, nullptr, nullptr);
 
     changeFont(cantFindLabel);
@@ -170,8 +170,7 @@ LRESULT CALLBACK windowProcedure(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lpar
             getTerraiaHandle(L"Terraria.exe");
 
             //if the process doesn't exist then show user corresponding message
-            if (hProcess) {
-                createFoundObjects(hwnd);
+            if (hProcess) {         
 				//get the address of the brightness instruction
 				getTileLightAddr = containsInMemory(hProcess, BRIGHTNESS_INSTRUCTION);
 				//if the address is not found then show user corresponding message
@@ -179,6 +178,7 @@ LRESULT CALLBACK windowProcedure(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lpar
 					createCantFindObjects(hwnd);
 					break;
 				}
+                createFoundObjects(hwnd);
 				createJumpAddrs();
             } else {
                 createCantFindObjects(hwnd);
