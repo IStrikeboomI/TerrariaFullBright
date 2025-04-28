@@ -1,4 +1,4 @@
-# Fullbright For Terraria!
+# Fullbright For Terraria! (Works for 1.4.4.9)
 Tired of not being able to see? Well just download and run one program so you can see everything!
 ![Before](https://github.com/IStrikeboomI/TerrariaFullBright/blob/master/resources/images/before.png?raw=true "before")
 ![After](https://github.com/IStrikeboomI/TerrariaFullBright/blob/master/resources/images/after.png?raw=true "after")
